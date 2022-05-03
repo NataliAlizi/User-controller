@@ -36,29 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.sliderZone{
-  width: 25%;
-  margin:0 auto;
-  padding: 20px 0 10px 0;
-}
-
-.searchLineZone {
-  padding: 10px 0 20px 0;
-  width:100%;
-  margin: 0 auto; /* center elements within the div */
-}
-
-
-.ButtonArea {
-  width:70%;
-  margin: 0 auto;
-}
-
-.ButtonArea #prevButton {
-  float:left;
-}
-
-.ButtonArea #nextButton {
-  float:right;
-}

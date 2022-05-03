@@ -1,0 +1,16 @@
+.Tabs{
+    background-color: bisque; 
+}
+.profileImg{
+    text-align: center;
+    display: block;
+    justify-content: center;
+    margin: auto;
+}
+
+.dataUser{
+    text-align: center;
+    display: block;
+    justify-content: center;
+    margin: auto;
+}

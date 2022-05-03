@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import {Route,Routes} from 'react-router-dom';
+import HomePage from './components/homePage/homePage.components';
+import Navigation from './routes/navigation/navigation.components';
+import UserData from './components/userData/userData.components';
 
-function App() {
+const App = () => {
+  const [usersList, setUsersList] = useState([]);
+  const fetchData = () => {
+    fetch(`https://randomuser.me/api/?page=?&results=150&seed=moveo`)
+      .then((response) => response.json())
+      .then((users) => setUsersList(users.results)
+      );
+  }
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route path='/' element={<Navigation/>}>
+        <Route index element={<HomePage usersList={usersList}/>}/>
+        <Route path='UserData/:userName' element={<UserData usersList={usersList}/>}/>
+      </Route>
+    </Routes>
+    );
 }
 
-export default App;
+  export default App;
