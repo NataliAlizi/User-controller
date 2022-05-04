@@ -46,6 +46,6 @@ Responsible for the Tabs Within each Tab there is some information about the use
 1. HTML
 2. CSS
 3. REACT
-4. RandonUser API
+4. RandomUser API
 5. mui
 
