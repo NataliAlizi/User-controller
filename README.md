@@ -31,11 +31,6 @@ A child component for the UsersList table, showing each and every user.
 A component, mapping all the users in the table and containing the following components: SearchAndFilter, PageSelector.
 
 ### `UserData:`
-Input (props):
-1.A list containing users.
-
-serDetails.js
-A component, showing the data of each user.
 
 Input (props):
 A list containing Users.
