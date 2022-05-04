@@ -6,65 +6,51 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 https://moveoprojectnatali.herokuapp.com/
 
-### `npm start`
+### `Project Description:`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Using React.js and the RandomUser API I was able to display a Table of 100 users allowing to filter and sort them based on the properties:Firdt Name,Last Name, Email, and Age.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The table has pagination control (10 pages) and every page contains 10 rows.
 
-### `npm test`
+By clicking on a user image or name it opens the "User Details” page and shows the data per user, and a link to send the user a new email.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## `Components List:`
 
-### `npm run build`
+## `App.js`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Getting data from the server and passing it to the components according to the current Route.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `home page:`
 
-### `npm run eject`
+Filters the original list according to the user's wishes and cuts the list so that there will be 10 users on each page`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `User:`
+A child component for the UsersList table, showing each and every user.
+### `UserList:`
+A component, mapping all the users in the table and containing the following components: SearchAndFilter, PageSelector.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `UserData:`
+Input (props):
+1.A list containing users.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+serDetails.js
+A component, showing the data of each user.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Input (props):
+A list containing Users.
+The user name (as a query parameter).
 
-## Learn More
+### `SearchBox:`
+Responsible for the box into which the user enters the details he wants to search for
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `Tabs:`
+Responsible for the Tabs Within each Tab there is some information about the user
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## `Tech Stack:`
+1.HTML
+2.CSS
+3.REACT
+4.RandonUser API
+5.mui
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
