@@ -43,9 +43,9 @@ Responsible for the box into which the user enters the details he wants to searc
 Responsible for the Tabs Within each Tab there is some information about the user
 
 ## `Tech Stack:`
-1.HTML
-2.CSS
-3.REACT
-4.RandonUser API
-5.mui
+1. HTML
+2. CSS
+3. REACT
+4. RandonUser API
+5. mui
 
