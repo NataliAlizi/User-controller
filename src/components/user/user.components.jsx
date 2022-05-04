@@ -1,7 +1,7 @@
-
+import { useState } from 'react';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './user.style.css';
 
 const User = (props) => {
@@ -10,7 +10,7 @@ const User = (props) => {
     const user_name = userDetails.name.first + " " + userDetails.name.last;
     const username = userDetails.login.username;
 
-    
+    const [isShown, setIsShown] = useState(false);
     return (
 
 
@@ -26,7 +26,9 @@ const User = (props) => {
             </TableCell>
 
             <TableCell align="right"><Link to={`/UserData/${username}`}>{user_name}</Link></TableCell>
-            <TableCell align="right">{userDetails.email}</TableCell>
+            <TableCell className='userEmail' align="right"><a href={`mailto:${userDetails.email}`} >{userDetails.email}</a>     
+            
+            </TableCell>
             <TableCell align="right">{userDetails.gender}</TableCell>
             <TableCell align="right">{userDetails.dob.age}</TableCell>
         </TableRow >

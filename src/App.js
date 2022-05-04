@@ -16,12 +16,14 @@ const App = () => {
   
   useEffect(() => {
     fetchData();
+
   }, []);
 
   return (
     <Routes>
-      <Route path='/' element={<Navigation/>}>
+      
         <Route index element={<HomePage usersList={usersList}/>}/>
+        <Route path='/' element={<Navigation/>}>
         <Route path='UserData/:userName' element={<UserData usersList={usersList}/>}/>
       </Route>
     </Routes>

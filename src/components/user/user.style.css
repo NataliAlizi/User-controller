@@ -2,3 +2,6 @@
   img {
     border-radius: 50px;
   }
+  .userEmail{
+    text-decoration: underline;
+  }

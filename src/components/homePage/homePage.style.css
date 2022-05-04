@@ -1,0 +1,10 @@
+.ageRange{
+    width: 100px;
+    margin-right: 20px;
+}
+.sliderZone{
+    display: flex;
+}
+.app-title{
+    font-size: 3em;
+}

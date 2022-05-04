@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Box } from '@mui/material/Box';
+import { useState} from 'react';
 import Tabs from '@mui/material/Tabs';
 import { AppBar } from '@mui/material';
 import Tab from '@mui/material/Tab';
 import './tabs.style.css'
+
 
 
 const DataTabs = ({ user }) => {
@@ -55,7 +55,11 @@ const DataTabs = ({ user }) => {
                         } </a>
                 </TabPanel>
                 <TabPanel value={tabNumber} index={3}>location : 
-                <iframe title="map" src={`https://www.google.com/maps/@=${user.location.coordinates.latitude},${user.location.coordinates.longitude}`}/>
+                <iframe
+                    width="600"
+                    height="450"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAYGH2pNCnPizduySeAopYHExQjEOI56NI&q=Space+Needle,Seattle+WA"
+                    />
                 </TabPanel>
             </div>
         </div>

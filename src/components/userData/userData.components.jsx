@@ -1,5 +1,4 @@
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import DataTabs from '../tabs/tabs.components';
 import './userData.style.css'

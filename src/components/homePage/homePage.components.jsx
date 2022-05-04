@@ -1,5 +1,5 @@
-
-import { useState, useEffect,useParams } from 'react';
+import './homePage.style.css'
+import { useState, useEffect } from 'react';
 import UserList from '../user-list/user-list.components';
 import SearchBox from '../search-box/search-box.components';
 import Button from '@mui/material/Button';
@@ -14,8 +14,6 @@ const HomePage = (props) => {
     const [emailSearchQuery, setEmailSearchQuery] = useState('');
     const [ageSearchQuery, setAgeSearchQuery] = useState([0, 100]);
     const [sliceList, setSliceList] = useState(usersList);
-    console.log(sliceList)
-
     
     const onSearchChange = (event) => {
 
@@ -42,7 +40,6 @@ const HomePage = (props) => {
             if(pageNumber<10){
             setPageNumber(pageNumber + 1);}
         }
-
     }
     useEffect(() => {
         const newFilteredList = usersList.filter((usersList) => {
@@ -51,14 +48,16 @@ const HomePage = (props) => {
         });
         setFilterList(newFilteredList);
         setPageNumber(1)
-        sliceLists();
-        console.log(filterList)
+        sliceLists(filterList);
     }, [firstNameSearchQuery, lastNameSearchQuery, emailSearchQuery, ageSearchQuery]);
 
     useEffect(() => {
-        sliceLists();
-    }, [filterList,pageNumber]);
-    
+        sliceLists(usersList);
+    }, [usersList,pageNumber]);
+
+    useEffect(() => {
+        sliceLists(filterList);
+    }, [filterList]);
 
     const categories = [
         {
@@ -75,11 +74,10 @@ const HomePage = (props) => {
         },
     ];
 
-    const sliceLists = () => {
-            const silceList=filterList.slice((pageNumber * 10 - 10), (pageNumber * 10 ))
-            setSliceList(silceList)
+    const sliceLists =(props) => {
+            const silce_list=props.slice((pageNumber * 10 - 10), (pageNumber * 10 ))
+            setSliceList(silce_list)
     }
-
 
     const updateRange = (event, props) => {
         setAgeSearchQuery(props);
@@ -133,8 +131,6 @@ const HomePage = (props) => {
         },
     ];
 
-
-
     return (
         <div className='App'>
             <h1 className='app-title'>All users</h1>
@@ -146,14 +142,14 @@ const HomePage = (props) => {
                         type="search" />
                 )}
 
-                <div className='sliderZone'>
-                    <div className='ageRange'>Age Range</div>
-                    <Slider value={ageSearchQuery}
+                <section className='sliderZone'>
+                    <span className='ageRange'>Age Range</span>
+                    <Slider  value={ageSearchQuery}
                         onChange={updateRange}
                         marks={marks}
                         step={10}
                     />
-                </div>
+                </section>
 
 
             </div>
